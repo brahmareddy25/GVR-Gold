@@ -172,7 +172,7 @@ export default function HomePage() {
               <div className="products-grid">
                 {featuredGold.slice(0, 4).map((product, i) => (
                   <RevealOnScroll key={product.id} delay={i * 100}>
-                    <ProductCard product={product} rate={currentRates.gold22k} gst={gst} />
+                    <ProductCard product={product} />
                   </RevealOnScroll>
                 ))}
               </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
               <div className="products-grid">
                 {featuredSilver.slice(0, 4).map((product, i) => (
                   <RevealOnScroll key={product.id} delay={i * 100}>
-                    <ProductCard product={product} rate={currentRates.silver} gst={gst} />
+                    <ProductCard product={product} />
                   </RevealOnScroll>
                 ))}
               </div>

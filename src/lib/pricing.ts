@@ -2,7 +2,15 @@
 // GVR Gold & Silver — Pricing Calculations
 // ============================================================
 
-import type { Product, GoldRate, PriceBreakdown } from './types';
+import type { Product, GoldRate } from './types';
+
+export interface PriceBreakdown {
+  metalValue: number;
+  makingCharges: number;
+  subtotal: number;
+  gst: number;
+  estimatedTotal: number;
+}
 
 /**
  * Calculate the estimated price for a product based on current market rates.

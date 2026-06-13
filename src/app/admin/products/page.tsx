@@ -436,7 +436,7 @@ export default function ProductsPage() {
                         value={formData.metalType} 
                         onChange={e => {
                           const newMetal = e.target.value as 'gold' | 'silver';
-                          const newCats = newMetal === 'gold' ? categories.gold : categories.silver;
+                          const newCats = allCategories.filter(cat => cat.metalType === newMetal);
                           setFormData({...formData, metalType: newMetal, category: newCats[0]?.value || ''});
                         }}
                       >

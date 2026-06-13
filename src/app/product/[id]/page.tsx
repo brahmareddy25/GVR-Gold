@@ -171,7 +171,7 @@ export default function ProductPage() {
             <div className="products-grid">
               {relatedProducts.map((p, i) => (
                 <RevealOnScroll key={p.id} delay={i * 100}>
-                  <ProductCard product={p} rate={getCardRate(p.metalType as 'gold' | 'silver')} />
+                  <ProductCard product={p} />
                 </RevealOnScroll>
               ))}
             </div>
