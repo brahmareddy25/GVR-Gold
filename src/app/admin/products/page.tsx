@@ -409,7 +409,7 @@ export default function ProductsPage() {
               </button>
             </div>
             
-            <div className="admin-modal-body" style={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto', padding: '32px 40px' }}>
+            <div className="admin-modal-body" style={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto' }}>
               {message && (
                 <div className={`admin-alert admin-alert-${message.type}`} style={{ marginBottom: 24, padding: 16, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 12, backgroundColor: message.type === 'success' ? 'rgba(46, 204, 113, 0.1)' : 'rgba(231, 76, 60, 0.1)', color: message.type === 'success' ? '#2ecc71' : '#e74c3c' }}>
                   {message.type === 'success' ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}

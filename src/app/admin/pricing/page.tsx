@@ -96,7 +96,7 @@ export default function PricingPage() {
       )}
 
       <form onSubmit={handleSave}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 24, marginBottom: 32 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, marginBottom: 32 }}>
           
           {/* Rate Mode Toggle */}
           <div className="admin-card" style={{ gridColumn: '1 / -1' }}>

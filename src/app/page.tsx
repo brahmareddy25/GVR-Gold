@@ -270,7 +270,7 @@ export default function HomePage() {
                     alt="Master jeweler crafting" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
-                  <div className="about-visual-card" style={{ position: 'absolute', bottom: '20px', right: '20px', left: '20px', background: 'rgba(10, 10, 10, 0.85)', backdropFilter: 'blur(10px)' }}>
+                  <div className="about-visual-card">
                     <div className="about-visual-stat">
                       <span className="about-stat-number text-gold-gradient">30+</span>
                       <span className="about-stat-label">Years of Excellence</span>

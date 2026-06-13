@@ -2379,6 +2379,10 @@ p {
     text-align: center;
   }
 
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+
   .product-grid, .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
@@ -2839,16 +2843,19 @@ a:focus-visible {
 }
 
 .about-visual-card {
-  background: var(--bg-card);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
   border: var(--border-gold);
   border-radius: var(--border-radius-lg);
-  padding: 48px 40px;
+  padding: 32px 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 380px;
-  position: relative;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   overflow: hidden;
 }
 
@@ -3264,6 +3271,34 @@ a:focus-visible {
   .about-preview-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+    text-align: center;
+  }
+
+  .about-preview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-values {
+    align-items: center;
+  }
+
+  .about-value {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .about-visual-card {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    bottom: auto;
+    right: auto;
+    margin-top: -60px; /* Slight overlap instead of floating inside */
+    z-index: 2;
   }
   
   .product-detail-grid {
