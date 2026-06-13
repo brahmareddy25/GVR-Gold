@@ -24,11 +24,17 @@ export async function GET(request: NextRequest) {
     // Only active products for categories
     products = products.filter((p: any) => p.active);
 
-    const categories = Array.from(new Set(products.map((p: any) => p.category)))
-      .map(category => ({
-        value: category,
-        label: (category as string).split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-      }));
+    const categoriesMap = new Map();
+    products.forEach((p: any) => {
+      if (!categoriesMap.has(p.category)) {
+        categoriesMap.set(p.category, {
+          value: p.category,
+          label: (p.category as string).split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+          metalType: p.metalType
+        });
+      }
+    });
+    const categories = Array.from(categoriesMap.values());
 
     return NextResponse.json({
       success: true,

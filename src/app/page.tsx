@@ -295,8 +295,8 @@ export default function HomePage() {
         <div className="container">
           <RevealOnScroll animation="scaleIn">
             <div className="cta-card glass-gold">
-              <h2>Visit Our <span className="text-gold-gradient">Showroom</span></h2>
-              <p>Experience the brilliance of our collections in person. Our experts are ready to help you find the perfect piece.</p>
+              <h2>Connect With <span className="text-gold-gradient">Us</span></h2>
+              <p>Connect with us to explore our exquisite jewelry collections. Our experts are ready to help you find the perfect piece.</p>
               <div className="cta-actions">
                 <a href="tel:+919876543210" className="btn btn-gold btn-lg">
                   <Phone size={18} />

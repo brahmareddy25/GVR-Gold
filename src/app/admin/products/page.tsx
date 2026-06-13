@@ -446,19 +446,27 @@ export default function ProductsPage() {
                     </div>
                     <div className="admin-form-group">
                       <label className="admin-form-label">Category *</label>
-                      <input 
-                        required 
-                        className="admin-form-input" 
-                        value={formData.category} 
-                        onChange={e => setFormData({...formData, category: e.target.value})}
-                        list="dynamic-categories"
-                        placeholder="e.g. Necklace, Ring, etc."
-                      />
-                      <datalist id="dynamic-categories">
-                        {dynamicFilterCategories.map(cat => (
-                          <option key={cat.value} value={cat.value}>{cat.label}</option>
-                        ))}
-                      </datalist>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <select 
+                          className="admin-form-select" 
+                          value={allCategories.find(c => c.value === formData.category) ? formData.category : ''} 
+                          onChange={e => {
+                            if (e.target.value) setFormData({...formData, category: e.target.value});
+                          }}
+                        >
+                          <option value="" disabled>-- Select existing category --</option>
+                          {allCategories.filter(c => c.metalType === formData.metalType).map(cat => (
+                            <option key={cat.value} value={cat.value}>{cat.label}</option>
+                          ))}
+                        </select>
+                        <input
+                          required={!formData.category}
+                          className="admin-form-input"
+                          placeholder="...or type a brand new category"
+                          value={allCategories.find(c => c.value === formData.category) ? '' : formData.category}
+                          onChange={e => setFormData({...formData, category: e.target.value.toLowerCase()})}
+                        />
+                      </div>
                     </div>
                   </div>
                   
